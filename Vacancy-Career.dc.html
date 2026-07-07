@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>body { margin: 0; background: #FAF9F6; }</style>
+</helmet>
+
+<div style="font-family: Inter, sans-serif; color: #2B2B2B; background: #FAF9F6; min-height: 100vh;">
+
+  <div style="background: #12291F; color: #FAF9F6; font-size: 13px; padding: 7px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;"><span>Phone: 031-590555</span><span>Email: info@mau.edu.np</span></div>
+    <div style="display: flex; gap: 18px; align-items: center; flex-wrap: wrap;">
+      <a href="https://mau-library.joomni.com/" target="_blank" style="color: #FAF9F6; text-decoration: none; opacity: .9;" style-hover="opacity:1;text-decoration:underline;">MAU e-Library</a>
+      <a href="https://mau.edu.np:2096/" target="_blank" style="color: #FAF9F6; text-decoration: none; opacity: .9;" style-hover="opacity:1;text-decoration:underline;">Webmail Login</a>
+      <a href="https://entrance.mau.edu.np/" target="_blank" style="background: #B8860B; color: #FAF9F6; padding: 6px 16px; border-radius: 3px; text-decoration: none; font-weight: 700; font-size: 12.5px; letter-spacing: .02em;" style-hover="background:#9c7109;">ONLINE APPLICATION</a>
+    </div>
+  </div>
+
+  <div style="background: #FAF9F6; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid #e5e1d8;">
+    <a href="Home.dc.html" style="display: flex; align-items: center; gap: 16px; text-decoration: none;">
+      <img src="https://mau.edu.np/wp-content/uploads/2024/01/cropped-WhatsApp-Image-2023-11-05-at-9.43.11-PM.jpeg" alt="MAU logo" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #1B4332;" />
+      <div>
+        <div style="font-family: Merriweather, serif; font-size: 21px; font-weight: 700; color: #1B4332; line-height: 1.25;">Madhesh Agricultural University</div>
+        <div style="font-family: Inter, sans-serif; font-size: 12.5px; color: #5b5b5b; letter-spacing: .03em; margin-top: 2px;">Rajbiraj, Saptari, Madhesh Province</div>
+      </div>
+    </a>
+  </div>
+
+  <nav style="background: #1B4332;">
+    <ul style="list-style: none; margin: 0; padding: 0 32px; display: flex; flex-wrap: wrap;">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="8">
+        <li style="position: relative;" onMouseEnter="{{ item.onEnter }}" onMouseLeave="{{ item.onLeave }}">
+          <a href="{{ item.href }}" style="{{ item.linkStyle }}" style-hover="background:#123024;">{{ item.label }}<sc-if value="{{ item.hasChildren }}"> ▾</sc-if></a>
+          <sc-if value="{{ item.open }}">
+            <div style="position: absolute; top: 100%; left: 0; background: #FFFFFF; min-width: 250px; box-shadow: 0 10px 28px rgba(0,0,0,.18); border-top: 3px solid #B8860B; z-index: 60;">
+              <sc-for list="{{ item.children }}" as="child" hint-placeholder-count="2">
+                <a href="{{ child.href }}" style="display: block; padding: 11px 18px; color: #2B2B2B; text-decoration: none; font-size: 14px; border-bottom: 1px solid #f0efe9; font-family: Inter, sans-serif;" style-hover="background:#FAF9F6;color:#B8860B;">{{ child.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </li>
+      </sc-for>
+    </ul>
+  </nav>
+
+  <section style="background: linear-gradient(180deg, rgba(18,41,31,.85), rgba(18,41,31,.9)), url('https://mau.edu.np/wp-content/uploads/2026/06/bb.jpeg') center/cover no-repeat; padding: 68px 32px; text-align: center; color: #FAF9F6;">
+    <h1 style="font-family: Merriweather, serif; font-size: clamp(28px, 4vw, 40px); margin: 0 0 10px;">Vacancy & Career</h1>
+    <div style="font-size: 14px; color: #dfe8e3;"><a href="Home.dc.html" style="color: #dfe8e3;">Home</a> / Vacancy & Career</div>
+  </section>
+
+  <section style="max-width: 900px; margin: 0 auto; padding: 72px 32px;">
+    <h2 style="font-family: Merriweather, serif; font-size: clamp(24px, 3vw, 30px); color: #1B4332; margin: 0 0 24px;">Vacancy & Career Opportunities</h2>
+    <p style="font-size: 16px; line-height: 1.85; color: #3a3a3a; margin: 0 0 18px; font-style: italic; color: #8a8a8a;">No open vacancies are listed here at present — matching the live site, which currently shows this page title with no further content. Tenders and staff openings are announced under Notice.</p>
+    <a href="Notice.dc.html" style="display: inline-block; margin-top: 12px; color: #1B4332; text-decoration: none; font-weight: 700; font-size: 14.5px; border: 2px solid #1B4332; padding: 10px 22px; border-radius: 4px;" style-hover="background:#1B4332;color:#FAF9F6;">View Notices →</a>
+  </section>
+
+  <footer style="background: #12291F; color: #d9e2dc; padding: 64px 32px 0;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; padding-bottom: 44px;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <img src="https://mau.edu.np/wp-content/uploads/2024/01/cropped-WhatsApp-Image-2023-11-05-at-9.43.11-PM.jpeg" alt="MAU logo" style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover;" />
+          <div style="font-family: Merriweather, serif; font-weight: 700; color: #FAF9F6; font-size: 16px;">Madhesh Agricultural University</div>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.7; color: #b9c6bf;">Rajbiraj, Saptari, Madhesh Province, Nepal</div>
+      </div>
+      <div>
+        <div style="font-family: Merriweather, serif; color: #FAF9F6; font-weight: 700; font-size: 15px; margin-bottom: 18px;">Quick Links</div>
+        <div style="display: flex; flex-direction: column; gap: 11px;">
+          <sc-for list="{{ footerNav }}" as="fn" hint-placeholder-count="8">
+            <a href="{{ fn.href }}" style="color: #b9c6bf; text-decoration: none; font-size: 13.5px;" style-hover="color:#E7C878;">{{ fn.label }}</a>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="font-family: Merriweather, serif; color: #FAF9F6; font-weight: 700; font-size: 15px; margin-bottom: 18px;">Contact</div>
+        <div style="font-size: 13.5px; line-height: 2; color: #b9c6bf;">Phone: 031-590555<br />Email: info@mau.edu.np</div>
+        <div style="font-family: Merriweather, serif; color: #FAF9F6; font-weight: 700; font-size: 15px; margin: 22px 0 12px;">Important Links</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <a href="https://madhesh.gov.np/" target="_blank" style="color: #b9c6bf; text-decoration: none; font-size: 13.5px;" style-hover="color:#E7C878;">Madhesh Province Portal</a>
+          <a href="https://mowcys.madhesh.gov.np/" target="_blank" style="color: #b9c6bf; text-decoration: none; font-size: 13.5px;" style-hover="color:#E7C878;">Ministry of Education &amp; Culture</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family: Merriweather, serif; color: #FAF9F6; font-weight: 700; font-size: 15px; margin-bottom: 18px;">Social</div>
+        <div style="display: flex; gap: 12px;">
+          <a href="#" title="Facebook (add link)" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: #FAF9F6; text-decoration: none; font-size: 15px; font-weight: 700;" style-hover="background:#B8860B;">f</a>
+          <a href="#" title="YouTube (add link)" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: #FAF9F6; text-decoration: none; font-size: 14px; font-weight: 700;" style-hover="background:#B8860B;">▶</a>
+        </div>
+        <div style="font-size: 12px; color: #7f8d86; margin-top: 12px; line-height: 1.6;">Placeholder — add official social links.</div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,.1); padding: 20px 0; text-align: center; font-size: 12.5px; color: #8b988f;">Copyright © 2026 Madhesh Agriculture University. All rights reserved.</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NAV = [
+  { key: 'home', label: 'Home', href: 'Home.dc.html', children: [] },
+  { key: 'about', label: 'About', href: 'About.dc.html', children: [
+    { label: 'Act, Plan & Policy', href: 'Act-Plan-Policy.dc.html' },
+    { label: 'Faculty & Staff', href: 'Faculty-Staff.dc.html' },
+  ]},
+  { key: 'notice', label: 'Notice', href: 'Notice.dc.html', children: [
+    { label: 'Vacancy & Career', href: 'Vacancy-Career.dc.html' },
+  ]},
+  { key: 'administration', label: 'Administration', href: 'Administration.dc.html', children: [
+    { label: 'Office of the Vice Chancellor', href: 'Office-VC.dc.html' },
+    { label: 'Office of the Registrar', href: 'Office-Registrar.dc.html' },
+  ]},
+  { key: 'program', label: 'Program', href: 'Program.dc.html', children: [
+    { label: 'Academics', href: 'Academics.dc.html' },
+    { label: 'Research', href: 'Research.dc.html' },
+    { label: 'Crops Improvement', href: 'Crops-Improvement.dc.html' },
+    { label: 'Plant Protection', href: 'Plant-Protection.dc.html' },
+    { label: 'Social', href: 'Social.dc.html' },
+  ]},
+  { key: 'infrastructure', label: 'Infrastructure', href: 'Infrastructure.dc.html', children: [] },
+  { key: 'activities', label: 'Activities', href: 'Activities.dc.html', children: [] },
+  { key: 'contact', label: 'Contact', href: 'Contact.dc.html', children: [] },
+];
+
+const CURRENT_KEY = 'notice';
+
+class Component extends DCLogic {
+  state = { openMenu: null };
+
+  buildNav() {
+    return NAV.map((item) => {
+      const isCurrent = item.key === CURRENT_KEY;
+      return {
+        ...item,
+        hasChildren: item.children.length > 0,
+        open: this.state.openMenu === item.key,
+        onEnter: () => this.setState({ openMenu: item.key }),
+        onLeave: () => this.setState({ openMenu: null }),
+        linkStyle: `display:block;padding:15px 18px;color:#FAF9F6;text-decoration:none;font-family:Inter,sans-serif;font-size:14.5px;font-weight:600;border-bottom:3px solid ${isCurrent ? '#B8860B' : 'transparent'};`,
+      };
+    });
+  }
+
+  renderVals() {
+    return {
+      navItems: this.buildNav(),
+      footerNav: NAV.map((n) => ({ label: n.label, href: n.href })),
+    };
+  }
+}
+</script>
+</body>
+</html>
